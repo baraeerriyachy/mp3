@@ -1,0 +1,6 @@
+#!/bin/bash
+
+i=$1
+o=$(echo $i | sed 's/\.[^.]*$/.mp3/')
+ffmpeg -i "$i" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 "$o"
+
